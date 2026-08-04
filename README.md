@@ -37,7 +37,7 @@ without touching anything actually dangerous. I only ever used it to score the m
 | After 200 steps of benign fine-tuning (lr 5e-5) | 67.5% |
 
 Random guessing on this benchmark scores 25%, so the model never came close to actually
-forgetting anything — unlearning knocked about 7 points off a 68-point score, and a few
+forgetting anything unlearning knocked about 7 points off a 68-point score, and a few
 hundred steps of ordinary instruction-tuning data put nearly all of it back. Neither
 recovery curve had leveled off by step 200, so the true ceiling is probably even closer to
 full recovery. The complete tuning history, both learning rates, and the reasoning behind
@@ -62,7 +62,7 @@ every choice are in `report/writeup.md`. A one-page plain-language version is in
 
 ## Running it yourself
 
-The machine this code lives on has no GPU and not enough RAM to load the model at all —
+The machine this code lives on has no GPU and not enough RAM to load the model at all.
 I confirmed that the hard way, it segfaults. Everything that touches the model ran on
 Google Colab instead. To reproduce:
 
@@ -95,7 +95,7 @@ so I substituted an open PubMed article corpus instead. It's the same general do
 (biomedical literature) but wasn't curated for the specific hazard-adjacent content the
 real corpus targets, which probably means my unlearning is weaker and less targeted than
 what the original RMU authors would get. The model is also much smaller than the ones RMU
-was originally tuned on — 1.5 billion parameters against 7 billion and up — so I had to
+was originally tuned on 1.5 billion parameters against 7 billion and up. So, I had to
 re-derive the hyperparameters myself rather than reuse published ones, and the specific
 numbers here shouldn't be read as a precise replication of anyone else's results. Finally,
 this is one run on one seed with one architecture and a fine-tuning budget that stopped at
@@ -106,9 +106,9 @@ is probably higher than what's reported.
 
 This is a defensive-research project: the entire point was to measure whether a safety
 method holds up, not to make a model more capable of anything dangerous. WMDP-bio was used
-exclusively as a scoring instrument — its multiple-choice questions are proxies built for
+exclusively as a scoring instrument its multiple-choice questions are proxies built for
 measurement, and I never mined them for content or used them as training data. The
 fine-tuning data used to test whether the safeguard held (`tatsu-lab/alpaca`) is a fully
 benign, open instruction dataset with nothing hazardous in it. No model checkpoint from any
-stage of this project — unlearned or "recovered" — has been uploaded or published anywhere;
+stage of this project unlearned or "recovered" has been uploaded or published anywhere;
 they only ever existed transiently on a Colab instance and were discarded after each run.
