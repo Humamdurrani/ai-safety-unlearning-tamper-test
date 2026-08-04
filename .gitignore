@@ -30,10 +30,6 @@ credentials.json
 *.pem
 *.key
 
-# Local / machine-specific Claude Code state
-.claude/settings.local.json
-.claude/scheduled_tasks.lock
-
 # Graphify knowledge graph (regenerable derived artifact; see CLAUDE.md)
 graphify-out/
 
