@@ -1,5 +1,11 @@
 ![Does removed bio knowledge stay removed? RMU unlearning vs. benign fine-tuning, a tamper-resistance test.](assets/banner.svg)
 
+A scoped, defensive AI-safety project. We take a small open-weight language model, remove 
+some hazardous-biology proxy knowledge with a published unlearning method, then test whether 
+that removal survives adversarial fine-tuning. This directly tests the central claim in 
+Stephen Casper's tamper-resistance notes: that today's post-training unlearning is not very 
+tamper-resistant.
+
 I took a small open-weight language model, used a published unlearning method (RMU) to
 strip out its ability to answer hazardous-biology proxy questions, and then fine-tuned it
 on completely ordinary, harmless text to see whether that ability came back. It came back
