@@ -1,4 +1,4 @@
-# Technical spec — tamper-resistance of bio-knowledge unlearning (small LLM)
+# Technical spec Tamper-resistance of bio-knowledge unlearning (small LLM)
 
 Context file for the implementing coding agent. Terse and prescriptive by design. Read this
 in full before writing code. If a fact here is stale (library API, dataset path, benchmark
