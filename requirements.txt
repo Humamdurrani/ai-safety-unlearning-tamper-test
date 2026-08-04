@@ -1,5 +1,4 @@
 # Working environment for this project: Google Colab (Tesla T4, 15.6 GB VRAM),
-# NOT the local machine (no CUDA GPU, only ~3.9 GB RAM - can't load the model).
 # Verified working end-to-end in Phase 0 (model load + generation) on Colab, 2026-07-19.
 #
 # Colab ships its own CUDA-matched torch/torchvision/torchaudio preinstalled - do not
