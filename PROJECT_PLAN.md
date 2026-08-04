@@ -7,10 +7,6 @@ trying to fine-tune it back. This directly tests the central claim in Stephen Ca
 tamper-resistance notes: that today's post-training "unlearning" is not very
 tamper-resistant.
 
-You (the project owner) are not a professional engineer. That's fine — the coding
-assistant (Claude Code) writes the code. Your job is to steer: read this plan, work one
-phase at a time, paste the prompts, and check the results against the "Done when" boxes.
-
 ---
 
 ## How to use this document
