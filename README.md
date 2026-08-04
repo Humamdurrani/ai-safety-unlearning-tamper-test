@@ -6,18 +6,18 @@ that removal survives adversarial fine-tuning. This directly tests the central c
 Stephen Casper's tamper-resistance notes: that today's post-training unlearning is not very 
 tamper-resistant.
 
-I took a small open-weight language model, used a published unlearning method (RMU) to
+Took a small open-weight language model, used a published unlearning method (RMU) to
 strip out its ability to answer hazardous-biology proxy questions, and then fine-tuned it
 on completely ordinary, harmless text to see whether that ability came back. It came back
 almost all the way, in under 200 training steps, with no attempt whatsoever to defeat the
-safeguard. That's the whole project in one sentence — everything else here is how I got
+safeguard. That's the whole project in one sentence everything else here is how I got
 that number and how much you should trust it.
 
 ## Why I ran this
 
 There's an ongoing argument in AI safety research about whether "unlearning" — training a
 model to stop using a capability, as opposed to never teaching it that capability in the
-first place — actually produces something durable. Stephen Casper and others have argued
+first place actually produces something durable. Stephen Casper and others have argued
 that most post-training unlearning is shallow: it suppresses a capability rather than
 removing it, and a little ordinary fine-tuning can bring it back. I wanted to see that for
 myself rather than take the argument on faith, so I built the smallest version of this
@@ -25,9 +25,7 @@ experiment I could run on a single GPU and watched what actually happened.
 
 WMDP-bio, the benchmark I used to measure this, is a public multiple-choice test built by
 biosecurity and AI-safety researchers specifically so people can study this question
-without touching anything actually dangerous. I only ever used it to score the model —
-I never read its questions for content, and nothing in this repo trains on hazardous
-material of any kind.
+without touching anything actually dangerous. I only ever used it to score the model.
 
 ## What happened
 
@@ -86,7 +84,7 @@ don't persist anything between sessions unless you download it yourself, so rath
 saving and reloading a multi-gigabyte checkpoint across two separate sessions, that
 notebook's first step regenerates the exact final RMU config deterministically and then
 immediately attacks it. `notebooks/phase2_unlearn.ipynb` is kept around only because it's
-the notebook I actually used while tuning the RMU hyperparameters — it's not part of the
+the notebook I actually used while tuning the RMU hyperparameters it's not part of the
 reproduction path, and the config it eventually converged on is what's in
 `configs/default.yaml` and what `phase3_attack.ipynb` regenerates.
 
